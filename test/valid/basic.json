@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/mtugb/bun-package-json-schema/main/schema.json",
+  "name": "my-app",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "dev": "bun --hot index.ts" },
+  "dependencies": { "react": "^19.0.0" },
+  "trustedDependencies": ["esbuild", "sharp"]
+}

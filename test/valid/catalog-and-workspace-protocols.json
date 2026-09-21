@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "dependencies": {
+    "react": "catalog:",
+    "jest": "catalog:testing",
+    "@monorepo/ui": "workspace:*",
+    "@monorepo/utils": "workspace:^"
+  },
+  "devDependencies": { "webpack": "catalog:build" },
+  "peerDependencies": { "react": "catalog:" }
+}

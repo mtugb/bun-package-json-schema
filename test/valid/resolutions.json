@@ -1,0 +1,8 @@
+{
+  "name": "my-app",
+  "resolutions": {
+    "bar": "~4.4.0",
+    "micromatch/picomatch": "^2.3.2",
+    "**/micromatch/**/picomatch": "^2.3.2"
+  }
+}

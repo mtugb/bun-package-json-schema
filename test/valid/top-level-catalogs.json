@@ -1,0 +1,6 @@
+{
+  "name": "my-monorepo",
+  "workspaces": ["packages/*"],
+  "catalog": { "react": "^19.0.0" },
+  "catalogs": { "testing": { "jest": "30.0.0" } }
+}

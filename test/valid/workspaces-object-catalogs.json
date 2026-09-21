@@ -1,0 +1,11 @@
+{
+  "name": "react-monorepo",
+  "workspaces": {
+    "packages": ["packages/*"],
+    "catalog": { "react": "^19.0.0", "react-dom": "^19.0.0" },
+    "catalogs": {
+      "build": { "webpack": "5.88.2", "babel": "7.22.10" },
+      "testing": { "jest": "29.6.2" }
+    }
+  }
+}

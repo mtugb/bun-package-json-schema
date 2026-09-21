@@ -1,0 +1,1 @@
+{ "name": "my-app", "workspaces": { "packages": ["packages/*"], "catalog": { "react": 19 } } }

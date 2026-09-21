@@ -1,0 +1,4 @@
+{
+  "name": "my-project",
+  "workspaces": ["packages/**", "!packages/**/test/**", "!packages/**/template/**"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "my-app",
+  "patchedDependencies": {
+    "react@17.0.2": "patches/react@17.0.2.patch"
+  }
+}
