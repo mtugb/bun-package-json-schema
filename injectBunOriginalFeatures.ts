@@ -42,10 +42,10 @@ function inject(npm: Json, features: Json, path: string[], replaced: string[]): 
   return out;
 }
 
-export function injectBunOriginalFeatures(npmSchema: Json) {
+export function injectBunOriginalFeatures(npmSchema: Json, features: Json = bunOriginalFeatures) {
   absolutizeRefs(npmSchema, npmSchema.$id as string);
   const replaced: string[] = [];
-  const schema = inject(npmSchema, bunOriginalFeatures, [], replaced);
+  const schema = inject(npmSchema, features, [], replaced);
   return { schema, replaced };
 }
 
@@ -53,7 +53,11 @@ if (import.meta.main) {
   const res = await fetch(NPM_SCHEMA_URL);
   if (!res.ok) throw new Error(`GET ${NPM_SCHEMA_URL} -> ${res.status}`);
 
-  const { schema, replaced } = injectBunOriginalFeatures((await res.json()) as Json);
+  // The features are written against the bun-types docs; record which version they came from.
+  const bunTypes = await Bun.file(new URL("./node_modules/bun-types/package.json", import.meta.url)).json();
+  const features = { ...bunOriginalFeatures, $comment: `Bun original features based on bun-types ${bunTypes.version} docs` };
+
+  const { schema, replaced } = injectBunOriginalFeatures((await res.json()) as Json, features);
   await Bun.write(OUT, JSON.stringify(schema, null, 2) + "\n");
 
   console.log(`wrote schema.json (${Object.keys(schema.properties as Json).length} properties)`);

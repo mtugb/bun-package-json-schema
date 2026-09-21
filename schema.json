@@ -1424,5 +1424,6 @@
       }
     }
   },
-  "$id": "https://raw.githubusercontent.com/mtugb/bun-package-json-schema/main/schema.json"
+  "$id": "https://raw.githubusercontent.com/mtugb/bun-package-json-schema/main/schema.json",
+  "$comment": "Bun original features based on bun-types 1.4.2 docs"
 }
