@@ -1,0 +1,17 @@
+{
+  "name": "bun-package-json-schema",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "inject": "bun injectBunOriginalFeatures.ts",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "ajv": "^8.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}
